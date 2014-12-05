@@ -49,16 +49,6 @@ module.exports = FormView.extend({
       ];
     }
 });
-
-var field = new CheckboxView({
-    name: 'color',
-    // you can also pass thirds, first is the value, second is the value, the third is the label
-    options: [['blue', true, 'Blue'], ['orange', true, 'Orange'], ['red', false, 'Red']],
-});
-
-// append it somewhere or use it in side an ampersand-form-view
-document.querySelector('form').appendChild(field.el);
-
 ```
 
 ## credits
