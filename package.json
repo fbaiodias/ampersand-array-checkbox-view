@@ -1,0 +1,67 @@
+{
+  "name": "ampersand-options-view",
+  "description": "A view module for intelligently rendering and validating multiple options input. Works well with ampersand-form-view.",
+  "version": "0.0.1",
+  "author": "Francisco Dias <francisco@baiodias.com>",
+  "browserify": {
+    "transform": [
+      "ampersand-version"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/xicombd/ampersand-options-view/issues"
+  },
+  "dependencies": {
+    "ampersand-checkbox-view": "^2.0.0",
+    "ampersand-form-view": "^2.2.0",
+    "ampersand-version": "^1.0.0",
+    "ampersand-view": "^7.0.0",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "ampersand-view-conventions": "^1.1.1",
+    "beefy": "^2.0.2",
+    "browserify": "~4.1.10",
+    "function-bind": "~0.1.0",
+    "jshint": "~2.5.1",
+    "phantomjs": "^1.9.7-15",
+    "precommit-hook": "~1.0.2",
+    "run-browser": "~1.3.1",
+    "tap-spec": "~0.2.0",
+    "tape": "~2.13.3",
+    "tape-run": "~0.1.1"
+  },
+  "homepage": "https://github.com/xicombd/ampersand-options-view",
+  "keywords": [
+    "forms",
+    "ampersand",
+    "browser"
+  ],
+  "license": "MIT",
+  "main": "ampersand-options-view.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xicombd/ampersand-options-view"
+  },
+  "scripts": {
+    "test": "browserify test/* | tape-run | tap-spec",
+    "start": "run-browser test/*",
+    "demo": "beefy demo.js"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/9..latest",
+      "firefox/17..latest",
+      "firefox/nightly",
+      "chrome/22..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  }
+}
