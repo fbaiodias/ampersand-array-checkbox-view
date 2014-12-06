@@ -7,6 +7,12 @@ It does the following:
 - Automatically shows/hides error message based required.
 - Will only show error message if the number of selected checkbox if off the specified limits
 
+## try it out
+```
+npm run demo 
+```
+
+
 ## install (not yet available)
 
 ```
