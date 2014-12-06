@@ -119,7 +119,7 @@ module.exports = View.extend({
         }
 
         var options = {
-            name : fieldName,
+            name: fieldName,
             label: fieldLabel,
             parent: this
         };
@@ -142,12 +142,19 @@ module.exports = View.extend({
         this.fieldsRendered = 0;
     },
     update: function () {
+        if(this.fieldsRendered < this.options.length) {
+            return;
+        }
+
+        var valid = true;
         var value = this.fields.reduce(function (previous, field) {
-            if (field.value) previous.push(field.name);
+            if (field.value) previous.push(field.value);
+            if (!field.valid && valid) valid = false;
             return previous;
         }, []);
         this.set({
             value: value,
+            fieldsValid: valid
         });
     },
     updateParent: function () {
