@@ -1,15 +1,19 @@
 /*global console, window*/
 // can be run with `npm run demo`
-var OptionsInput = require('./ampersand-options-view');
+var ArrayCheckbox = require('./ampersand-array-checkbox-view');
 var FormView = require('ampersand-form-view');
 
 
-var input = new OptionsInput({
-    label: 'What do you want?',
-    name: 'food-options',
+var input = new ArrayCheckbox({
+    label: 'Colors',
+    name: 'color',
+    value: ['green'],
+    minLength: 0,
+    maxLength: 2,
     options: [
-      ['banana', true, 'Very good banana'],
-      ['atum', false, 'Wow such tuna']
+      ['red', 'Red'],
+      ['green', 'Green'],
+      ['blue', 'Blue']
     ],
 });
 

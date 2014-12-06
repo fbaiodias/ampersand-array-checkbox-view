@@ -1,4 +1,4 @@
-# ampersand-options-view
+# ampersand-array-checkbox-view
 
 A view module for rendering and validating multiple checkbox inputs. Works well with ampersand-form-view.
 
@@ -10,41 +10,33 @@ It does the following:
 ## install (not yet available)
 
 ```
-npm install ampersand-options-view 
+npm install ampersand-array-checkbox-view
 ```
 
 ## example
 
 ```javascript
 var FormView = require('ampersand-form-view');
-var OptionsView = require('ampersand-options-view');
+var CheckboxArray = require('ampersand-array-checkbox-view');
 
 module.exports = FormView.extend({
   fields: function () {
       return [
-        new OptionsView({
+        new CheckboxArray({
           // form input `name`
           name: 'color',
           // You can replace the built-in templates with your own.
           template: // some HTML string
           fieldTemplate: // some HTML string
           // Label name
-          label: 'Choose your colors',
+          label: 'Pick a color!',
           // you can pass simple string options
           options: ['blue', 'orange', 'red'],
-          // Message to use if error is that it's required
-          // but no value was set.
-          requiredMessage: 'This box must be checked.',
         }),
-        new OptionsView({
-            name: 'color',
-            // you can also pass pairs, first is the value, second is the value
-            options: ['blue', 'orange', 'red'],
-        }),
-        new OptionsView({
-            name: 'color',
-            // you can also pass pairs, first is the value, second is the value
-            options: [['blue', true], ['orange', true], ['red', false]],
+        new CheckboxArray({
+          name: 'option',
+          // you can also pass pairs, first is the value, second is used for the label
+          options: [ ['a', 'Option A'], ['b', 'Option B'], ['c', 'Option C'] ]
         })
       ];
     }

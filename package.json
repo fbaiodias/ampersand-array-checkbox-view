@@ -1,5 +1,5 @@
 {
-  "name": "ampersand-options-view",
+  "name": "ampersand-array-checkbox-view",
   "description": "A view module for intelligently rendering and validating multiple options input. Works well with ampersand-form-view.",
   "version": "0.0.1",
   "author": "Francisco Dias <francisco@baiodias.com>",
@@ -9,7 +9,7 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/xicombd/ampersand-options-view/issues"
+    "url": "https://github.com/xicombd/ampersand-array-checkbox-view/issues"
   },
   "dependencies": {
     "ampersand-checkbox-view": "^2.0.0",
@@ -31,17 +31,17 @@
     "tape": "~2.13.3",
     "tape-run": "~0.1.1"
   },
-  "homepage": "https://github.com/xicombd/ampersand-options-view",
+  "homepage": "https://github.com/xicombd/ampersand-array-checkbox-view",
   "keywords": [
     "forms",
     "ampersand",
     "browser"
   ],
   "license": "MIT",
-  "main": "ampersand-options-view.js",
+  "main": "ampersand-array-checkbox-view.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/xicombd/ampersand-options-view"
+    "url": "git://github.com/xicombd/ampersand-array-checkbox-view"
   },
   "scripts": {
     "test": "browserify test/* | tape-run | tap-spec",

@@ -111,21 +111,20 @@ module.exports = View.extend({
         }
     },
     addField: function (item) {
-        var options = {};
+        var fieldName = item;
+        var fieldLabel = item;
         if(item instanceof Array) {
-            options = {
-                name: item[0],
-                label: item[2] || item[0],
-                value: item[1],
-                parent: this,
-            };
-        } else {
-            options = {
-                name: item,
-                label: item,
-                parent: this,
-            };
+            fieldName = item[0];
+            fieldLabel = item[1] || item[0];
         }
+
+        var options = {
+            name : fieldName,
+            label: fieldLabel,
+            parent: this
+        };
+
+        options.value = this.value.indexOf(options.name) != -1;
 
         var field = new CheckboxView(options);
         field.template = this.fieldTemplate;
@@ -143,7 +142,6 @@ module.exports = View.extend({
         this.fieldsRendered = 0;
     },
     update: function () {
-        var valid = true;
         var value = this.fields.reduce(function (previous, field) {
             if (field.value) previous.push(field.name);
             return previous;
@@ -159,8 +157,9 @@ module.exports = View.extend({
         var plural;
         if(!(this.value.length >= this.minLength && this.value.length <= this.maxLength)) {
             plural = this.maxLength > 1;
+            var twoItems = this.maxLength-this.minLength==1;
             if(this.minLength != this.maxLength) {
-                return 'Select between '+this.minLength+' and '+this.maxLength+' item' + (plural ? 's.' : '.');
+                return 'Select '+(twoItems ? '' : 'between ')+this.minLength+' '+(twoItems ? 'or' : 'and')+' '+this.maxLength+' item' + (plural ? 's.' : '.');
             }
 
             return 'Select '+this.maxLength+' item' + (plural ? 's.' : '.');
