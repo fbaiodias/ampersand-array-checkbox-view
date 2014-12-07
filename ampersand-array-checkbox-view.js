@@ -15,6 +15,9 @@ var defaultTemplate = [
 var defaultFieldTemplate = [
     '<label class="checkbox">',
         '<input type="checkbox"><span data-hook="label"></span>',
+        '<div data-hook="message-container" class="message message-below message-error">',
+            '<p data-hook="message-text"></p>',
+        '</div>',
     '</label>'
 ].join('');
 
@@ -121,13 +124,13 @@ module.exports = View.extend({
         var options = {
             name: fieldName,
             label: fieldLabel,
+            template: this.fieldTemplate,
             parent: this
         };
 
         options.value = this.value.indexOf(options.name) != -1;
 
         var field = new CheckboxView(options);
-        field.template = this.fieldTemplate;
         field.render();
         this.fieldsRendered += 1;
         this.fields.push(field);
