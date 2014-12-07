@@ -151,7 +151,7 @@ module.exports = View.extend({
 
         var valid = true;
         var value = this.fields.reduce(function (previous, field) {
-            if (field.value) previous.push(field.value);
+            if (field.value) previous.push(field.name);
             if (!field.valid && valid) valid = false;
             return previous;
         }, []);
