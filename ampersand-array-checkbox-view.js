@@ -99,6 +99,9 @@ module.exports = View.extend({
         }
     },
     setOptions: function (arr) {
+        if (arr.length == 0) throw Error('No options provided');
+        if (arr.length < this.minLength) throw Error('Options length lesser than minLength setting');
+
         this.clearFields();
         arr.forEach(this.addField, this);
         this.update();

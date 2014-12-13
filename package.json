@@ -44,7 +44,7 @@
     "url": "git://github.com/xicombd/ampersand-array-checkbox-view"
   },
   "scripts": {
-    "test": "browserify test/* | tape-run | tap-spec",
+    "test": "browserify test/index.js | tape-run -b phantom | tap-spec",
     "start": "run-browser test/*",
     "demo": "beefy demo.js"
   },
