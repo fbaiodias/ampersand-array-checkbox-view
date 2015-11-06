@@ -70,7 +70,7 @@ module.exports = View.extend({
         maxLength: ['number', true, 10],
         template: ['string', true, defaultTemplate],
         fieldTemplate: ['string', true, defaultFieldTemplate],
-        type: ['text', true, 'text']
+        type: ['string', true, 'text']
     },
     session: {
         shouldValidate: ['boolean', true, false],
